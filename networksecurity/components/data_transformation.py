@@ -19,7 +19,7 @@ from networksecurity.logging.logger import logging
 
 from networksecurity.utils.main_utils.utils import save_numpy_array_data, save_object
 
-class DataTranformation:
+class DataTransformation:
     def __init__(self, data_validation_artifact: DataValidationArtifact,
                  data_transformation_config: DataTransformationConfig):
         try:
@@ -49,8 +49,8 @@ class DataTranformation:
         logging.info("Entered initiate_data_transformation method of Data Transformation class")
         try:
             logging.info("Starting data transformation")
-            train_df = DataTranformation.read_data(self.data_validation_artifact.valid_train_file_path)
-            test_df = DataTranformation.read_data(self.data_validation_artifact.valid_test_file_path)
+            train_df = DataTransformation.read_data(self.data_validation_artifact.valid_train_file_path)
+            test_df = DataTransformation.read_data(self.data_validation_artifact.valid_test_file_path)
 
             ##training dataframe
             input_feature_train_df = train_df.drop(columns=[TARGET_COLUMN], axis = 1)
@@ -73,6 +73,7 @@ class DataTranformation:
             save_numpy_array_data(self.data_transformation_config.transformed_test_file_path, array=test_arr,)
             save_object(self.data_transformation_config.transformed_object_file_path, preprocessor_object,)
 
+            save_object("final_model/preprocessor.pkl", preprocessor_object,)
             #preparing artifacts
             data_transformation_artifact = DataTransformationArtifact(
                 transformed_object_file_path=self.data_transformation_config.transformed_object_file_path,
