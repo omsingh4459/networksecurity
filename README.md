@@ -160,12 +160,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Email: omsingh4459@gmail.com
 - GitHub: [@omsingh4459](https://github.com/omsingh4459)
 
-## 🙏 Acknowledgments
-
-- Dataset source: Network security phishing data
-- Built with FastAPI, scikit-learn, and MLflow
-- Deployed on AWS with Docker containerization
-
----
-
 ⭐ Star this repo if you find it helpful!
